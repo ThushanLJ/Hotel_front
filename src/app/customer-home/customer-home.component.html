@@ -1,0 +1,73 @@
+<app-cus-nav></app-cus-nav>
+
+  <div class="body">
+    <br><br>
+
+    <div *ngIf="marked">
+
+        <button (click)="viewCart()" style="margin-left:1200px;"><img src="../../assets/images/cart.png" style="width:30px;height:30px"></button>
+
+        <br><br>
+
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let menu of menus">
+        <div class="card">
+          <div class="card-body" style="text-align: center ">
+            <img src="{{menu.photoUrl}}" style="height:8cm; width:8cm;">
+            <pre><h3 class="card-title"style="text-align:left " >Name : {{ menu.itemname}}</h3></pre>
+            <pre><h3 class="card-title"style="text-align:left ">Price:Rs {{menu.itemprice}}</h3></pre>
+            <pre><h3 class="card-title"style="text-align:left ">No of items:<input type="number" style="width: 100px;" name="noOfitems" [(ngModel)]="noOfitems"></h3></pre>
+            <p class="card-text"></p>
+             <div class="row">
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-dark" (click)="cartAdd(menu.itemname,menu.itemprice,noOfitems)">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!marked">
+
+      <button (click)="backMenu()">Back to menu</button>
+
+      <br><br>
+
+      <div class="table-wrapper-scroll-y pl-5 pr-5" style="color:white">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">Item name</th>
+                <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">Unit Price</th>
+                <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let orders of order.data">
+                  <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 100px;;text-align:center;font-weight:bold;" ><h3>{{orders.itemName}}</h3></td>
+                  <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 100px;;text-align:center;font-weight:bold;"><h3>{{orders.itemPrice}}</h3></td>
+                  <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 100px;;text-align:center;font-weight:bold;"><h3>{{orders.quantity}}</h3></td>
+              </tr>
+      
+      
+            </tbody>
+          </table>
+      
+      
+        </div>
+
+        <br><br>
+        <div style="color: red; margin-left: 1000px;" ><h3>Total cost: &nbsp; {{total}}</h3></div>
+        <br><br>
+
+        <button (click)="sendOrder()" style="margin-left: 1000px;">Send order</button>
+
+  </div>
+
+  </div>
+
+
+  

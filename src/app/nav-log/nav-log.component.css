@@ -1,0 +1,11 @@
+.nav-link{
+  font-size: 20px;
+  font-family:'Crete-Round', serif;
+
+}
+
+.navbar{
+  size: 200px;
+  background-color:rgb(204, 229, 255); 
+  height:80px;
+}

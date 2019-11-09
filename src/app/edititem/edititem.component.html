@@ -1,0 +1,49 @@
+<app-nav-log></app-nav-log>
+<div class="body">
+<div clss = "card">
+<div class="container">
+  <!-- Default form contact -->
+  <form [formGroup]="edititem" class ="text-center border border-light p-5"  #f="ngForm" (ngSubmit)="logIn(edititem.value)">
+
+    <p class="h4 mb-4" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 45px; font-weight:800">Edit Item</p>
+
+    <div class="row">
+        <input type="text"
+        formControlName="itemname"
+        id="" class="form-control mb-4"
+        placeholder="Item Name"
+        [ngClass]="{'is-invalid': edititem.get('itemname').touched && edititem.get('itemname').invalid}"
+        >
+   <div *ngIf="edititem.get('itemname').touched && edititem.get('itemname').invalid" class="invalid-feedback">
+          <div *ngIf="edititem.get('itemname').errors.required">Item name is required</div>
+         <div *ngIf="edititem.get('itemname').errors.pattern "> </div>
+
+     </div>
+
+     <input type="number"
+     formControlName="itemprice"
+     id="" class="form-control mb-4"
+     placeholder="Price"
+     [ngClass]="{'is-invalid': edititem.get('itemprice').touched && edititem.get('itemprice').invalid}"
+     >
+  <div *ngIf="edititem.get('itemprice').touched && edititem.get('itemprice').invalid" class="invalid-feedback">
+     <div *ngIf="edititem.get('itemprice').errors.required">Item Price is required</div>
+      <div *ngIf="edititem.get('itemprice').errors.pattern "> </div>
+
+  </div>
+
+  <div  class="upload">
+    <input type="file" id="" class="form-control mb-4" placeholder="" (change)="upload($event)"  accept=".png,.jpg"   >
+    </div>
+
+    </div>
+
+      <button class="btn btn-elegant btn-block" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 24px; font-weight:500; padding-left: 100; padding-right: 100"  type="submit" [disabled]="!url" >Submit</button>
+
+    </form>
+
+
+      <br><br><br>
+
+  </div>
+</div>

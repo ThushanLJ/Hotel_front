@@ -1,0 +1,32 @@
+<app-nav-log></app-nav-log>
+<div class="body">
+<br><br><br>
+<div class="table-wrapper-scroll-y pl-5 pr-5">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+
+
+          <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">Table NO</th>
+          <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">NO of Chairs</th>
+          <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">Discrpion</th>
+          <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">Remove</th>
+          <th scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; font-weight:600; font-size: 32px ;text-align:center;font-weight:bold;">Edit Table</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let table of tables">
+            <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 100px;;text-align:center;font-weight:bold;" ><h3>{{ table.tableno}}</h3></td>
+            <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 100px;;text-align:center;font-weight:bold;"><h3>{{ table.tablesize}}</h3></td>
+            <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 100px;;text-align:center;font-weight:bold;"><h3>{{  table. description}}</h3></td>
+          <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 90px;font-weight:500;text-align:center;font-weight:bold;"><button type="button" class="btn btn-dark" (click)=" removeTable(table._id)">Remove Table</button>
+            <td scope="col" style="font-family: 'ZCOOL XiaoWei', sans-serif; padding-top: 90px;font-weight:500;text-align:center;font-weight:bold;"><button type="button" class="btn btn-dark" (click)="editTable(table._id)" >Edit Table</button>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+
+  </div>
+</div>

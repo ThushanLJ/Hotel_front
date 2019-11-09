@@ -1,0 +1,56 @@
+<app-nav-log></app-nav-log>
+<div class ="body">
+<div class="container">
+  <!-- Default form contact -->
+  <form [formGroup]="CreateTable" class ="text-center border border-light p-5"  #f="ngForm" (ngSubmit)="logIn(CreateTable.value)">
+
+    <p class="h4 mb-4" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 45px; font-weight:800">Add Table</p>
+
+    <div class="row">
+        <input type="text"
+        formControlName="tableno"
+        id="" class="form-control mb-4"
+        placeholder="Table No"
+        [ngClass]="{'is-invalid': CreateTable.get('tableno').touched && CreateTable.get('tableno').invalid}"
+        >
+   <div *ngIf="CreateTable.get('tableno').touched && CreateTable.get('tableno').invalid" class="invalid-feedback">
+          <div *ngIf="CreateTable.get('tableno').errors.required" >Table No is required</div>
+         <div *ngIf="CreateTable.get('tableno').errors.pattern "> </div>
+
+     </div>
+
+     <input type="number"
+     formControlName="tablesize"
+     id="" class="form-control mb-4"
+     placeholder="No Of Chairs"
+     [ngClass]="{'is-invalid': CreateTable.get('tablesize').touched && CreateTable.get('tablesize').invalid}"
+     >
+  <div *ngIf="CreateTable.get('tablesize').touched && CreateTable.get('tablesize').invalid" class="invalid-feedback">
+     <div *ngIf="CreateTable.get('tablesize').errors.required">Table size is required</div>
+      <div *ngIf="CreateTable.get('tablesize').errors.pattern "> </div>
+
+  </div>
+
+  <input type="text"
+  formControlName="description"
+  id="" class="form-control mb-4"
+  placeholder="Discription"
+  [ngClass]="{'is-invalid': CreateTable.get('description').touched && CreateTable.get('description').invalid}"
+  >
+<div *ngIf="CreateTable.get('description').touched && CreateTable.get('description').invalid" class="invalid-feedback">
+   <div *ngIf="CreateTable.get('description').errors.required">Discription is required</div>
+   <div *ngIf="CreateTable.get('description').errors.pattern "> </div>
+
+</div>
+
+    </div>
+
+      <button class="btn btn-elegant btn-block" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 30px; font-weight:500; padding-left: 100; padding-right: 100"  type="submit" [disabled]="!CreateTable.valid">Submit</button>
+
+    </form>
+
+
+      <br><br><br>
+
+  </div>
+</div>

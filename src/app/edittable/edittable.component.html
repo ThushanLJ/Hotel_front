@@ -1,0 +1,54 @@
+<div class="container">
+  <!-- Default form contact -->
+  <form [formGroup]="Edittable" class ="text-center border border-light p-5"  #f="ngForm" (ngSubmit)="logIn(Edittable.value)">
+  
+    <p class="h4 mb-4" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 45px; font-weight:800">Edit Table</p>
+  
+    <div class="row">
+        <input type="text" 
+        formControlName="tableno"  
+        id="" class="form-control mb-4"
+        placeholder=""
+        value="{table.tableno}"
+        [ngClass]="{'is-invalid': Edittable.get('tableno').touched && Edittable.get('tableno').invalid}"
+        >
+   <div *ngIf="Edittable.get('tableno').touched && Edittable.get('tableno').invalid" class="invalid-feedback">
+          <div *ngIf="Edittable.get('tableno').errors.required">Table No is required</div> 
+         <div *ngIf="Edittable.get('tableno').errors.pattern "> </div>
+        
+     </div> 
+     
+     <input type="number" 
+     formControlName="tablesize"  
+     id="" class="form-control mb-4"
+     placeholder="No Of Chairs"
+     [ngClass]="{'is-invalid': Edittable.get('tablesize').touched && Edittable.get('tablesize').invalid}"
+     >
+  <div *ngIf="Edittable.get('tablesize').touched && Edittable.get('tablesize').invalid" class="invalid-feedback">
+     <div *ngIf="Edittable.get('tablesize').errors.required">Table size is required</div> 
+      <div *ngIf="Edittable.get('tablesize').errors.pattern "> </div>
+     
+  </div> 
+
+  <input type="text" 
+  formControlName="description"  
+  id="" class="form-control mb-4"
+  placeholder="Discription"
+  [ngClass]="{'is-invalid': Edittable.get('description').touched && Edittable.get('description').invalid}"
+  >
+<div *ngIf="Edittable.get('description').touched && Edittable.get('description').invalid" class="invalid-feedback">
+   <div *ngIf="Edittable.get('description').errors.required">Discription is required</div> 
+   <div *ngIf="Edittable.get('description').errors.pattern "> </div>
+  
+</div> 
+
+    </div>
+       
+      <button class="btn btn-elegant btn-block" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 24px; font-weight:500; padding-left: 100; padding-right: 100"  type="submit" >Submit</button>
+    
+    </form>
+  
+          
+      <br><br><br>
+  
+  </div>

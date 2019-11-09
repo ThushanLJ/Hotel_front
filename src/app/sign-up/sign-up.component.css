@@ -1,0 +1,17 @@
+.sign{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.body {
+    background-image: url('../../assets/images/adult-beautiful-beauty-826349.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: auto;
+    height: 1200px;
+    align-items: center;
+    align-content: center;
+}
+

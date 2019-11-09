@@ -1,0 +1,25 @@
+<app-nav-log></app-nav-log>
+<div class="body">
+  <br><br>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let menu of menus">
+      <div class="card">
+        <div class="card-body" style="text-align: center ">
+          <img src="{{menu.photoUrl}}" style="height:8cm; width:8cm;">
+          <pre><h3 class="card-title"style="text-align:left " >Name : {{ menu.itemname}}</h3></pre>
+          <pre><h3 class="card-title"style="text-align:left ">Price:Rs {{menu.itemprice}}</h3></pre>
+          <p class="card-text"></p>
+           <div class="row">
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-dark" (click)="removeitem(menu._id)">Remove</button>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-dark" (click)="edititem(menu._id)">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+</div>

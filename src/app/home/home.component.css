@@ -1,0 +1,21 @@
+
+.body {
+    background-image: url('../../assets/images/home2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: auto;
+    height: 1000px;
+    align-items: center;
+    align-content: center;
+}
+.heading{
+    font-family:'ZCOOL XiaoWei', serif;
+    font-weight: 1000px;
+    font-size: 115px;
+    color:blue;
+    margin-left:100px;
+
+
+}

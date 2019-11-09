@@ -1,0 +1,11 @@
+.body {
+  background-image:url(../../assets/images/owner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: auto;
+  height: 1000px;
+  align-items: center;
+  align-content: center;
+}
