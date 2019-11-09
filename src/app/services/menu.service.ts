@@ -36,7 +36,7 @@ export class MenuService {
   }
 
   sendOrder(order){
-    return this.http.post(`http://localhost:3000/api/menu`,order)
+    return this.http.post(`http://localhost:3000/api/order`,order)
   }
 
 }
